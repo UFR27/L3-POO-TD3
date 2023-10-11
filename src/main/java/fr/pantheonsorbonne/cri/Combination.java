@@ -1,7 +1,7 @@
 package fr.pantheonsorbonne.cri;
 
 public class Combination {
-    private final Card[] cards;
+    protected final Card[] cards;
 
     public Combination(Card[] cards) {
         this.cards = cards;

@@ -4,8 +4,12 @@ public class Main {
     public static void main(String... args) {
 
         {
-            Card[] hand1 = new Card[]{new Card(2, 'c'), new Card(3, 'c'), new Card(4, 'c'),
-                    new Card(5, 't'), new Card(5, 'k')};
+            Card[] hand1 = new Card[]{
+                new Card(2, 'c'),
+                new Card(3, 'c'),
+                new Card(4, 'c'),
+                new Card(5, 't'),
+                new Card(5, 'k')};
 
             Combination alldiff = new AllDifferentCombination(hand1);
             System.out.println("t1-" + (alldiff.isMatch() ? "KO" : "OK"));

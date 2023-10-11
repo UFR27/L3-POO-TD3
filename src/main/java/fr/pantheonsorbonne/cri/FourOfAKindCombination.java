@@ -1,44 +1,13 @@
 package fr.pantheonsorbonne.cri;
 
-public class FourOfAKindCombination extends Combination {
+public class FourOfAKindCombination extends RepeatedCombination {
     public FourOfAKindCombination(Card[] cards) {
         super(cards);
     }
 
-    Boolean isMatch = null;
-    int maxValue = 0;
-
-    public boolean isMatch() {
-        if (isMatch != null) {
-            return isMatch.booleanValue();
-        } else {
-            int countCardSameValue = 0;
-            int valueCardSameValue = 0;
-            for (int i = 0; i < cards.length; i++) {
-                int countCardSameValueLoop = 1;
-                int valueCardSameValueLoop = 0;
-                for (int j = i+1; j < cards.length; j++) {
-                    if (cards[i].cardValue() == cards[j].cardValue()) {
-                        countCardSameValueLoop++;
-                    }
-                }
-                if (countCardSameValueLoop > countCardSameValue
-                        || (countCardSameValueLoop == countCardSameValue
-                                && valueCardSameValue < valueCardSameValueLoop)) {
-                    countCardSameValue = countCardSameValueLoop;
-                    valueCardSameValue = cards[i].cardValue();
-                }
-            }
-            isMatch = countCardSameValue >= 4;
-            maxValue = valueCardSameValue;
-            return isMatch;
-        }
-
+    @Override
+    public int getRequiredNumberOfRepetition() {
+        return 4;
     }
 
-    public int getHighestCombinationCardRank() {
-        isMatch();
-        return this.maxValue;
-    }
 }
-

@@ -1,7 +1,7 @@
 package fr.pantheonsorbonne.cri;
 
-public class PairCombination extends Combination {
-    public PairCombination(Card[] cards) {
+public class FourOfAKindCombination extends Combination {
+    public FourOfAKindCombination(Card[] cards) {
         super(cards);
     }
 
@@ -29,7 +29,7 @@ public class PairCombination extends Combination {
                     valueCardSameValue = cards[i].cardValue();
                 }
             }
-            isMatch = countCardSameValue >= 2;
+            isMatch = countCardSameValue >= 4;
             maxValue = valueCardSameValue;
             return isMatch;
         }
@@ -41,3 +41,4 @@ public class PairCombination extends Combination {
         return this.maxValue;
     }
 }
+
